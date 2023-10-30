@@ -24,10 +24,19 @@ public partial class App : Application
             Text = "Hey there! What\'s up? Is everything ok?",
         };
 
+        /*
+        Directly to Details???
+
         var vm = new DetailViewModel();
         vm.InitializeAsync(message).Wait();
         var detailView = new DetailView();
         detailView.BindingContext = vm;
         MainPage = new NavigationPage(detailView);
+        */
+
+        var vm = new HomeViewModel();
+        var v = new HomeView();
+        v.BindingContext = vm;
+        MainPage = new NavigationPage(v);
 	}
 }
